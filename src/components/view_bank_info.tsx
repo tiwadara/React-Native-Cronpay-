@@ -40,7 +40,8 @@ const BankInfoView = (props: any) => {
         props.loading?.(false);
         setLoadingDetails(false);
       });
-  }, [accountNumber, selectedBank, props]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [accountNumber, selectedBank]);
 
   useEffect(() => {
     loadLocalBanks()
@@ -65,7 +66,8 @@ const BankInfoView = (props: any) => {
         bankObj: banks.find((bank: any) => bank.id === selectedBank),
       });
     }
-  }, [accountName, ammount, accountNumber, banks, selectedBank, props]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [accountName, ammount]);
 
   return (
     <View>
