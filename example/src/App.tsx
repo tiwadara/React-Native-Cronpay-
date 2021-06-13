@@ -1,21 +1,27 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import Cronpay from 'react-native-cronpay';
+import CronPayView from 'react-native-cronpay';
 
-export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+export default class MainPage extends React.Component {
+  render() {
+    return (
+      <CronPayView 
+      onClose={handleClose}
+      onMandateCreated={(resp: any) => handleSent(resp)}
+      />
+    );
+  }
+};
 
-  React.useEffect(() => {
-    Cronpay.multiply(3, 7).then(setResult);
-  }, []);
-
-  return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
-  );
+const handleClose = () => {
+  console.log('Clossssed');
 }
+
+const handleSent = (resp: any) => {
+  console.log('Seeent!' +resp);
+}
+
 
 const styles = StyleSheet.create({
   container: {
