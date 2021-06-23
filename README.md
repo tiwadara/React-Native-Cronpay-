@@ -19,6 +19,8 @@ npm install react-native-webview
 
 ## Usage
 
+Navigate to CronPayView as a root element
+
 ```js
 import CronPayView from "react-native-cronpay";
 
@@ -26,6 +28,7 @@ export default class MainPage extends React.Component {
   render() {
     return (
       <CronPayView
+        apiKey="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaIxpGQuZgh1Pe0IN_XVLjP....lcsC4d1gphLffgCj2qOwcJ7s"
         onClose={handleClose}
         onMandateCreated={(resp: any) => handleSent(resp)}
       />
