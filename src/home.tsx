@@ -27,8 +27,7 @@ const Home = ({ navigation, route }: any) => {
   const [currentStep, setCurrentStep] = useState(1);
   const [paymentData, setPaymentData] = useState<PaymentData>();
 
-  const token =
-    'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJnZ2ciLCJsYXN0TmFtZSI6ImdnZ2ciLCJpZCI6IjMiLCJleHAiOjE2NTM1NDU4OTYsImVtYWlsIjoidGVld2FoMjRAZ21haWwuY29tIiwianRpIjoiY2FiODgwNjUtNDBiNS00YTI0LWIwZWItMDdhYWY4NmQ2MjhiIiwiY2xpZW50X2lkIjoiY2xpZW50SWQifQ.L-Cd5BDbPxr_JTnmrEVoZCI9Zwd9__3tenm2_owo4FiLLKQyzpFncWVTAXUdX2Q5nYevhk5071d5H2dtHboXxLL-bTja2zL46GwlkO9qZIrfPji79X7ADszOGwB8mIxpGQuZgh1Pe0IN_XVLjP_lcsC4d1gphLffgCj2qOwcJ7s';
+  const token = route.params.token;
 
   useEffect(() => {
     initSdk(token)
@@ -37,7 +36,7 @@ const Home = ({ navigation, route }: any) => {
         loadBanks();
       })
       .catch((error) => console.error(error));
-  }, []);
+  }, [token]);
 
   useEffect(() => {
     if (route.params?.signature) {
@@ -73,8 +72,7 @@ const Home = ({ navigation, route }: any) => {
   function createMandate() {
     setLoadingStep(true);
     createmandate(paymentData, signaturePadSigned, verifiedBankDetails)
-      .then((response) => {
-        console.log(response);
+      .then((response: any) => {
         DeviceEventEmitter.emit('event.onMandateCreated', response);
         setLoadingStep(false);
         setCurrentStep(currentStep + 1);
@@ -90,7 +88,7 @@ const Home = ({ navigation, route }: any) => {
         <View>
           <CronPayHeader />
           <View style={styles.container}>
-            <Timeline />
+            <Timeline step={currentStep} />
             <CronPaySpacer height={20} />
             {currentStep == 3 ? (
               <StepThreeView />

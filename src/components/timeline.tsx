@@ -2,15 +2,15 @@ import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { ColorConstants } from '../constants/color_constants';
 
-const Timeline = () => {
+const Timeline = (props: any) => {
   return (
     <View>
       <View style={styles.progressRow}>
         <Circle />
-        <Line />
-        <CircleAccent />
-        <Line />
-        <CircleAccent />
+        {props.step == 2 || props.step == 3 ? <GreenLine /> : <Line />}
+        {props.step == 2 || props.step == 3 ? <Circle /> : <CircleAccent />}
+        {props.step == 3 ? <GreenLine /> : <Line />}
+        {props.step == 3 ? <Circle /> : <CircleAccent />}
       </View>
       <View style={styles.progressRow}>
         <Text style={styles.subtitle}>Bank Details</Text>
@@ -64,6 +64,20 @@ const Line = () => {
       style={{
         flexGrow: 1,
         borderBottomColor: ColorConstants.shadow,
+        borderBottomWidth: 2,
+        alignSelf: 'center',
+        alignContent: 'center',
+      }}
+    />
+  );
+};
+
+const GreenLine = () => {
+  return (
+    <View
+      style={{
+        flexGrow: 1,
+        borderBottomColor: ColorConstants.primaryDark,
         borderBottomWidth: 2,
         alignSelf: 'center',
         alignContent: 'center',

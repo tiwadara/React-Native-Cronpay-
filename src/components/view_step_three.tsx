@@ -1,16 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { ColorConstants } from '../constants/color_constants';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 const StepThreeView = () => {
   return (
     <View>
-      <Text style={styles.text}>
-        <Text style={styles.text}>
-          {'\n We are creat ur account with the details below :'}
-          {'\nAccount Number :  '}
-        </Text>
-      </Text>
+      <Image
+        style={styles.icon}
+        source={require('../asset/success-icon.png')}
+      />
+      <Text style={styles.title}>{'THANK YOU'}</Text>
       <Text style={styles.text}>
         <Text style={styles.text}>
           {'We have sent your request and you will be notified upon approval'}
@@ -27,40 +25,26 @@ const styles = StyleSheet.create({
     color: 'black',
     fontWeight: '400',
     fontSize: 14,
-    textAlign: 'left',
+    textAlign: 'center',
+    marginVertical: 10,
+  },
+  title: {
+    color: 'black',
+    fontWeight: 'bold',
+    fontSize: 20,
+    textAlign: 'center',
     marginVertical: 10,
   },
   accountNameProgress: {
     alignItems: 'flex-end',
     marginVertical: 10,
   },
-  input: {
-    height: 60,
-    paddingHorizontal: 20,
-    marginVertical: 10,
-    backgroundColor: ColorConstants.white,
-    borderWidth: 0.001,
-    borderColor: ColorConstants.white,
-    borderRadius: 5.0,
-    shadowColor: ColorConstants.shadow,
-    shadowOffset: { width: 0, height: 800 },
-    shadowRadius: 200,
-    elevation: 2,
-  },
-  dashContainer: {
-    width: 350,
+  icon: {
+    width: 100,
     height: 100,
-    borderColor: ColorConstants.grey,
-    borderWidth: 1,
-    borderRadius: 10,
-    borderStyle: 'dashed',
+    marginTop: 50,
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  buttonText: {
-    fontWeight: '400',
-    fontSize: 12,
-    marginVertical: 10,
   },
 });

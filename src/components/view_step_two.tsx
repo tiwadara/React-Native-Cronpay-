@@ -28,15 +28,24 @@ const StepTwoView = (props: any) => {
     <View>
       <Text style={styles.text}>
         <Text style={styles.text}>
-          {'Dear ' + paymentData.firstName + paymentData.lastName}
+          {'Dear '}
+          <Text style={styles.textBold}>
+            {' '}
+            {' ' +
+              paymentData.firstName +
+              ' ' +
+              paymentData.lastName +
+              ','}{' '}
+          </Text>
           {
-            '\n We are creating a direct debit authorisation request on your behalf for your account with the details below :'
+            '\nWe are creating a direct debit authorisation request on your behalf for your account with the details below :'
           }
           {'\nAccount Number :  ' + props.bankData.accountNumber}
           {'\nBank : ' + props.bankData.bankObj.name}
-          {'\nMaximum Debit Amount : ' + props.bankData.maxAmount}
+          {'\nMaximum Debit Amount :  NGN ' + props.bankData.maxAmount}
         </Text>
       </Text>
+      <Text style={styles.textBold}> {'\nSignature'} </Text>
 
       <View
         style={styles.dashContainer}
@@ -59,9 +68,17 @@ export default StepTwoView;
 
 const styles = StyleSheet.create({
   text: {
+    color: 'grey',
+    fontWeight: '100',
+    fontSize: 15,
+    textAlign: 'left',
+    marginVertical: 20,
+  },
+  textBold: {
     color: 'black',
-    fontWeight: '400',
+    fontWeight: 'bold',
     fontSize: 14,
+    textTransform: 'capitalize',
     textAlign: 'left',
     marginVertical: 10,
   },

@@ -15,19 +15,15 @@ const Sign = ({ navigation }: any) => {
     });
   };
 
-  const handleEmpty = () => {
-    console.log('Empty');
-  };
+  const handleEmpty = () => {};
 
-  const handleClear = () => {
-    console.log('clear success!');
-  };
+  const handleClear = () => {};
 
   const handleEnd = () => {};
 
   const style = `.m-signature-pad--footer
     .button {
-      background-color: red;
+      background-color: #21D0B2;
       color: #FFF;
     }`;
 

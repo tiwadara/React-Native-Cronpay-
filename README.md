@@ -41,7 +41,7 @@ const handleClose = () => {
 };
 
 const handleSent = (resp: any) => {
-  console.log('Seeent!' + resp);
+   console.log("mandate created" +  JSON.stringify(resp));
 };
 ```
 

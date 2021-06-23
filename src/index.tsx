@@ -19,21 +19,22 @@ const CronPayView = (props: any) => {
     props.onClose();
   }
 
-  function mandateCreated(mandateResponse: Object): void {
-    console.log(mandateResponse.toString);
+  function mandateCreated(mandateResponse: any): void {
     props.onMandateCreated(mandateResponse);
   }
 
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          initialParams={{ token: props.apiKey }}
+        />
         <Stack.Screen name="Sign" component={Sign} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
-
-//  onClose={props.navigation.onClose()} onMandateSent={props.navigation.onMandateSent()}
 
 export default CronPayView;

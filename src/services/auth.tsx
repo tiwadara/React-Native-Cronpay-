@@ -14,7 +14,6 @@ export const initSdk = async (token: String) => {
   try {
     let response = await fetch(Constants.INIT_SDK, requestOptions);
     let json = await response.json();
-    console.log(json);
     await Storage.setItem(StorageConstants.SDK_INIT_DATA, json.data);
     await Storage.setItem(StorageConstants.TOKEN, json.data.accessToken);
     return json.data;
@@ -50,7 +49,6 @@ export const getBanks = async () => {
 };
 
 export const verifyBankDetails = async (accountNumber: any, bankId: any) => {
-  console.log(accountNumber + bankId);
   let requestOptions = {
     method: 'POST',
     headers: {
@@ -101,7 +99,6 @@ export const createmandate = async (
     }),
   };
 
-  console.log('requesting ' + requestOptions.body);
   try {
     let response = await fetch(Constants.MANDATES, requestOptions);
     let json = await response.json();

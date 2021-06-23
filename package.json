@@ -1,6 +1,6 @@
 {
   "name": "react-native-cronpay",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "description": "Payment",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -74,7 +74,18 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "@react-native-async-storage/async-storage": "^1.15.4",
+    "@react-navigation/native": "^5.9.4",
+    "@react-native-community/masked-view": "^0.1.11",
+    "@react-navigation/stack": "^5.14.5",
+    "react-native-dropdown-picker": "^5.1.14",
+    "react-native-elements": "^3.4.1",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-safe-area-context": "^3.2.0",
+    "react-native-screens": "^3.3.0",
+    "react-native-signature-canvas": "^4.0.0",
+    "react-native-webview": "^11.6.2"
   },
   "jest": {
     "preset": "react-native",
@@ -158,21 +169,14 @@
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.4",
     "@react-native-community/masked-view": "^0.1.11",
-    "@react-native-picker/picker": "^1.16.0",
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.5",
     "react-native-dropdown-picker": "^5.1.14",
     "react-native-elements": "^3.4.1",
     "react-native-gesture-handler": "^1.10.3",
-    "react-native-linear-gradient": "^2.5.6",
-    "react-native-material-dropdown": "^0.11.1",
-    "react-native-modal-dropdown": "https://github.com/siemiatj/react-native-modal-dropdown",
-    "react-native-reanimated": "^2.2.0",
     "react-native-safe-area-context": "^3.2.0",
     "react-native-screens": "^3.3.0",
     "react-native-signature-canvas": "^4.0.0",
-    "react-native-signature-pad": "^0.1.0",
-    "react-native-vector-icons": "^8.1.0",
     "react-native-webview": "^11.6.2"
   }
 }

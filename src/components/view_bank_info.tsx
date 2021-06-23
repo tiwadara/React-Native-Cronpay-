@@ -46,7 +46,6 @@ const BankInfoView = (props: any) => {
   useEffect(() => {
     loadLocalBanks()
       .then((response) => {
-        console.log(response);
         setBanks(response);
       })
       .catch((error) => console.error(error));
